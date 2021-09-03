@@ -13,7 +13,12 @@
     "baseUrl": "./",
     "paths": {
       // 根据别名配置相关路径
-        "@/*": ["./src/*"]
+        "@/*": ["./src/*"],
+        "@componets/*": ["./src/components/*"],
+        "@layouts/*": ["./src/layouts/*"],
+        "@store/*": ["./src/store/*"],
+        "@views/*": ["./src/views/*"],
+        "@utils/*": ["./src/utils/*"]
       }
   },
   "include": ["src/**/*.ts", "src/**/**/*.ts","src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
