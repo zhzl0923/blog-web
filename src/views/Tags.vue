@@ -1,7 +1,5 @@
 <template>
-  <div class="logo">
-    <a href="/">ZLi</a>
-  </div>
+  <div> tags </div>
 </template>
 
 <script lang="ts">

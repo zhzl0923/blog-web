@@ -1,9 +1,4 @@
-<template>
-  <div class="logo">
-    <a href="/">ZLi</a>
-  </div>
-</template>
-
+<template> category </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
 

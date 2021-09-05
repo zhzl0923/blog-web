@@ -14,6 +14,7 @@
   "devDependencies": {
     "@iconify/vue": "^3.0.0",
     "@tailwindcss/postcss7-compat": "^2.2.9",
+    "@types/node": "^16.7.10",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
     "@typescript-eslint/parser": "^4.30.0",
     "@vitejs/plugin-vue": "^1.6.0",

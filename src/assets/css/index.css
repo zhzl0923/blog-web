@@ -1,8 +1,2 @@
-/*! @import */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
-  @apply bg-gray-100 w-screen h-screen font-sans;
-}
+@import 'global.css';
+@import 'header.css';

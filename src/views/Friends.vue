@@ -1,7 +1,5 @@
 <template>
-  <div class="logo">
-    <a href="/">ZLi</a>
-  </div>
+  <div> friends </div>
 </template>
 
 <script lang="ts">
