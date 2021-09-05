@@ -11,3 +11,15 @@ export default defineComponent({
   setup() {}
 })
 </script>
+
+<style scoped>
+.logo {
+  @apply text-2xl font-black text-gray-600;
+
+  line-height: 4rem;
+}
+
+.logo:hover {
+  @apply text-blue-500;
+}
+</style>
