@@ -1,7 +1,0 @@
-.header {
-  @apply h-16 bg-white flex items-center cursor-pointer shadow-md;
-}
-
-.header .container {
-  @apply flex ml-10 mr-10 items-center justify-between;
-}
