@@ -1,27 +1,42 @@
 <template>
-  <hr class="divide" />
+  <div class="divide">
+    <Icon icon="fa-solid:cut" class="divide-icon" />
+    <hr />
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { Icon } from '@iconify/vue'
 
 export default defineComponent({
+  components: {
+    Icon
+  },
   setup() {}
 })
 </script>
 
 <style scoped>
 .divide {
-  @apply mt-4 mb-4 ml-auto mr-auto border-2 border-dashed border-blue-400;
+  @apply text-blue-400 font-semibold pt-4 pb-4 items-center relative cursor-pointer;
+
+  font-size: 20px;
 }
 
-.divide::before {
-  @apply z-30;
+.divide hr {
+  margin: 0 auto;
+}
 
-  color: #60a5fa;
-  content: '\f0c4';
-  font-size: 20px;
-  line-height: 1;
+.divide .divide-icon {
+  z-index: 1;
+  position: absolute;
+  top: 8px;
+  left: 10px;
   transition: all 1s ease-in-out;
+}
+
+.divide:hover .divide-icon {
+  left: calc(100% - 27px);
 }
 </style>
