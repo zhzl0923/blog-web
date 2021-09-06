@@ -14,7 +14,7 @@ export default defineComponent({
 
 <style scoped>
 .logo {
-  @apply text-2xl font-black text-gray-600;
+  @apply text-lg font-semibold text-gray-700;
 
   line-height: 4rem;
 }

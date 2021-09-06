@@ -21,18 +21,18 @@ export default defineComponent({
 
 <style scoped>
 .search {
-  @apply flex  mr-8 items-center h-8  leading-8 flex-shrink-0;
+  @apply flex   items-center h-7  leading-7 flex-shrink-0;
 }
 
 .search input {
   border: 1px solid;
 
-  @apply h-8 pl-2 rounded-md border-gray-300 w-52;
+  @apply h-7 pl-2 rounded-md border-gray-300 w-52 text-gray-700 text-sm;
   @apply focus:outline-none focus:ring-1 focus:border-blue-500;
 }
 
 .search button {
-  @apply text-gray-400;
+  @apply text-gray-700 hover:text-blue-500;
 
   position: relative;
   right: 25px;

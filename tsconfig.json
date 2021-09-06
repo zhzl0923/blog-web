@@ -14,7 +14,7 @@
     "paths": {
       // 根据别名配置相关路径
         "@/*": ["./src/*"],
-        "@componets/*": ["./src/components/*"],
+        "@components/*": ["./src/components/*"],
         "@layouts/*": ["./src/layouts/*"],
         "@store/*": ["./src/store/*"],
         "@views/*": ["./src/views/*"],

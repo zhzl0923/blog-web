@@ -54,7 +54,7 @@ export default defineComponent({
 }
 
 .menu .menu-item span {
-  @apply text-gray-600 font-medium text-sm;
+  @apply text-gray-700 font-medium text-sm;
 }
 
 .menu .active {
