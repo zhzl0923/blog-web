@@ -27,7 +27,3 @@ body {
     'Segoe UI Symbol',
     'Noto Color Emoji';
 }
-
-hr {
-  @apply border-2 border-dashed border-blue-400;
-}

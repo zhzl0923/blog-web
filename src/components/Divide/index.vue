@@ -25,6 +25,8 @@ export default defineComponent({
 }
 
 .divide hr {
+  @apply border-2 border-dashed border-blue-400;
+
   margin: 0 auto;
 }
 
