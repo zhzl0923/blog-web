@@ -30,15 +30,9 @@
   }
 
   .sitebar-menus .sitebar-menu {
-    @apply flex items-center  space-x-8;
+    @apply flex items-center  space-x-8 rounded;
     @apply pl-4 pr-4 pt-2 pb-2 ml-4 mr-4 cursor-pointer;
-  }
-
-  .sitebar-menus .sitebar-menu:hover {
-    @apply bg-blue-300;
-  }
-
-  .sitebar-menus .sitebar-menu span {
-    @apply text-lg font-medium text-gray-700;
+    @apply text-gray-700 text-lg font-medium;
+    @apply hover:bg-blue-500 hover:text-white;
   }
 </style>

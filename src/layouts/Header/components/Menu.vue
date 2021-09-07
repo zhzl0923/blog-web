@@ -43,18 +43,14 @@
   }
 
   .menu .menu-item {
-    @apply pl-4 pr-4 h-16 box-border font-medium;
-    @apply text-gray-700 flex items-center space-x-1 flex-shrink-0;
+    @apply pl-4 pr-4 h-16 box-border font-medium text-gray-800 hover:bg-gray-100;
+    @apply text-gray-700 flex items-center space-x-2 flex-shrink-0;
 
     border-bottom: 3px solid transparent;
   }
 
-  .menu .menu-item:hover {
-    @apply bg-gray-200;
-  }
-
   .menu .menu-item span {
-    @apply text-gray-700 font-medium text-sm;
+    @apply select-none;
   }
 
   .menu .active {

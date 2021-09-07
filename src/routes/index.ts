@@ -15,7 +15,7 @@ export const routes: RouteRecordRaw[] = [
       {
         path: '/categories',
         component: () => import('@/views/Categories.vue'),
-        meta: { title: '分类', icon: 'fa-solid:th-large' }
+        meta: { title: '分类', icon: 'fa-solid:folder-open' }
       },
       {
         path: '/tags',

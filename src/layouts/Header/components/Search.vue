@@ -1,41 +1,39 @@
 <template>
-  <div class="search">
-    <input type="text" name="keywords" />
-    <button>
+  <div class="search" @click="openModal">
+    <span class="select-none">
       <Icon icon="fa-solid:search" />
-    </button>
+    </span>
+    <span class="hidden select-none md:block">搜索</span>
+    <Modal ref="searchModal" title="本地搜索"></Modal>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { Icon } from '@iconify/vue'
+  import {defineComponent , ref } from 'vue'
+  import { Icon } from '@iconify/vue'
+  import { Modal } from '@components/Modal'
 
-export default defineComponent({
-  components: {
-    Icon
-  },
-  setup() {}
-})
+  export default defineComponent({
+    components: {
+      Icon,
+      Modal
+    },
+    setup() {
+      const searchModal = ref<InstanceType<typeof Modal>>()
+      const openModal = ()=>{
+        searchModal.value?.openModal()
+      }
+     
+      return {searchModal,openModal}
+    }
+  })
 </script>
 
 <style scoped>
-.search {
-  @apply flex   items-center h-7  leading-7 flex-shrink-0;
-}
+  .search {
+    @apply flex items-center h-16 pl-4 pr-4 flex-shrink-0;
+    @apply space-x-2 text-gray-800 hover:bg-gray-100 cursor-pointer;
 
-.search input {
-  border: 1px solid;
-
-  @apply h-7 pl-2 rounded-md border-gray-300 w-52 text-gray-700 text-sm;
-  @apply focus:outline-none focus:ring-1 focus:border-blue-500;
-}
-
-.search button {
-  @apply text-gray-700 hover:text-blue-500;
-
-  position: relative;
-  right: 25px;
-  z-index: 1;
-}
+    line-height: 4rem;
+  }
 </style>

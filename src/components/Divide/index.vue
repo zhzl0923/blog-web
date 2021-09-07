@@ -19,13 +19,13 @@
 
 <style scoped>
   .divide {
-    @apply text-blue-300 font-semibold pt-5 pb-5 items-center relative cursor-pointer;
+    @apply text-blue-500 font-semibold pt-5 pb-5 items-center relative cursor-pointer;
 
     font-size: 22px;
   }
 
   .divide hr {
-    @apply border-2 border-dashed border-blue-300;
+    @apply border-2 border-dashed border-blue-500;
 
     margin: 0 auto;
   }
