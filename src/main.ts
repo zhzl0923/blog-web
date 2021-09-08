@@ -1,8 +1,10 @@
 import { createApp } from 'vue'
 import App from '@/App.vue'
 import "@assets/css/index.css"
+import "animate.css"
 import { setupRouter } from '@/routes'
 import { setupStore } from '@/store'
+
 
 
 const app = createApp(App)

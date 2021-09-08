@@ -1,8 +1,17 @@
 <template>
   <teleport to="body">
-    <div :class="{ sidebar: true, hidden: hidden }">
-      <div :class="{ mask: true, hidden: hidden }" @click="maskClick"></div>
-      <div :class="{ modal: true, hidden: hidden }">
+    <div class="sidebar">
+      <div
+        :class="{
+          mask: true,
+          animate__animated: true,
+          animate__fadeIn: true,
+          animate__fadeOut: hidden,
+          hidden: hidden
+        }"
+        @click="maskClick"
+      ></div>
+      <div :class="{ modal: true, open: !hidden }">
         <Avatar />
         <site-data />
         <Divide />
@@ -43,19 +52,24 @@ export default defineComponent({
 
 <style scoped>
 .sidebar {
-  @apply fixed top-0 left-0 z-10 flex md:hidden;
+  @apply fixed top-0 left-0 z-10 md:hidden;
 }
 
 .sidebar .mask {
-  @apply h-screen fixed top-0 left-0 md:hidden;
+  @apply w-screen h-screen bg-black bg-opacity-60;
 
-  width: calc(100vw - 300px);
-  background-color: rgba(0, 0, 0, 0.5);
+  transition: all ease-in-out 0.5s;
 }
 
 .sidebar .modal {
-  @apply h-screen bg-white fixed top-0 right-0 md:hidden;
+  @apply z-20 h-screen bg-white fixed top-0;
 
+  right: -300px;
   width: 300px;
+  transition: all ease-in-out 0.5s;
+}
+
+.open {
+  transform: translate3d(-100%, 0, 0);
 }
 </style>
