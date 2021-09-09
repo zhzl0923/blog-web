@@ -19,9 +19,9 @@
         }"
       >
         <div class="modal-title">
-          <div class="font-medium text-blue-500 select-none">{{ title }}</div>
-          <div>
-            <button class="text-2xl text-gray-400" @click="closeModal">
+          <div class="font-light text-blue-500 select-none">{{ title }}</div>
+          <div class="flex iterm-center">
+            <button class="text-gray-400" @click="closeModal">
               <Icon icon="fa-solid:times" />
             </button>
           </div>
@@ -76,13 +76,16 @@ export default defineComponent({
 }
 
 .modal .modal-content {
-  @apply fixed z-40 bg-white top-32 rounded-md p-5;
+  @apply fixed z-40 bg-white top-32 rounded-md p-5 overflow-hidden;
 
   width: 30rem;
+  max-height: 40rem;
   left: calc((100% - 30rem) / 2);
 }
 
 .modal .modal-title {
-  @apply flex justify-between text-lg;
+  @apply flex justify-between items-center;
+
+  font-size: 1.4rem;
 }
 </style>
