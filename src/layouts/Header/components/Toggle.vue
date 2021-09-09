@@ -1,5 +1,5 @@
 <template>
-  <div @click="openSidebar" class="toggle">
+  <div @click="toggle" class="toggle">
     <span>
       <Icon icon="fa-solid:bars" />
     </span>
@@ -9,18 +9,16 @@
  <script lang="ts">
 import { defineComponent } from 'vue'
 import { Icon } from '@iconify/vue'
-import { useSidebarStore } from '@store/modules/sidebar'
 
 export default defineComponent({
+  props: {
+    toggle: { type: Function }
+  },
   components: {
     Icon
   },
   setup() {
-    const store = useSidebarStore()
-    const openSidebar = () => {
-      store.updateHiddenStatus()
-    }
-    return { openSidebar }
+    return {}
   }
 })
 </script>

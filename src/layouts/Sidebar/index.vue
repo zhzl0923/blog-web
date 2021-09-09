@@ -5,15 +5,15 @@
         :class="{
           mask: true,
           animate__animated: true,
-          animate__fadeIn: true,
-          animate__fadeOut: hidden,
+          animate__fadeIn: isShow,
+          animate__fadeOut: !isShow,
           hidden: hidden
         }"
-        @click="maskClick"
+        @click="closeSidebar"
       ></div>
-      <div :class="{ modal: true, open: !hidden }">
+      <div :class="{ modal: true, open: isShow }">
         <Avatar />
-        <site-data />
+        <site-data :closeSidebar="closeSidebar" />
         <Divide />
         <Menus />
       </div>
@@ -22,10 +22,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import { Icon } from '@iconify/vue'
-import { useSidebarStore } from '@store/modules/sidebar'
-import { storeToRefs } from 'pinia'
 import Avatar from './components/Avatar.vue'
 import Menus from './components/Menus.vue'
 import SiteData from './components/SiteData.vue'
@@ -40,25 +38,32 @@ export default defineComponent({
     Divide
   },
   setup() {
-    const store = useSidebarStore()
-    const { hidden } = storeToRefs(store)
-    const maskClick = () => {
-      store.updateHiddenStatus()
+    const isShow = ref(false)
+    const hidden = ref(true)
+
+    const openSidebar = () => {
+      hidden.value = false
+      isShow.value = true
     }
-    return { hidden: hidden, maskClick }
+
+    const closeSidebar = () => {
+      isShow.value = false
+      setTimeout(() => {
+        hidden.value = true
+      }, 800)
+    }
+    return { isShow, hidden, openSidebar, closeSidebar }
   }
 })
 </script>
 
 <style scoped>
 .sidebar {
-  @apply fixed top-0 left-0 z-10 md:hidden;
+  @apply absolute top-0 left-0 md:hidden;
 }
 
 .sidebar .mask {
-  @apply w-screen h-screen bg-black bg-opacity-60;
-
-  transition: all ease-in-out 0.5s;
+  @apply absolute w-screen h-screen bg-black bg-opacity-60;
 }
 
 .sidebar .modal {

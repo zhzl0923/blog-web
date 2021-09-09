@@ -1,14 +1,14 @@
 <template>
   <div class="site-data">
-    <router-link @click="hidden" to="/archive" class="site-item">
+    <router-link @click="closeSidebar" to="/archive" class="site-item">
       <div class="headline">文章</div>
       <div class="num">10</div>
     </router-link>
-    <router-link @click="hidden" to="/tags" class="site-item">
+    <router-link @click="closeSidebar" to="/tags" class="site-item">
       <div class="headline">标签</div>
       <div class="num">20</div>
     </router-link>
-    <router-link @click="hidden" to="/categories" class="site-item">
+    <router-link @click="closeSidebar" to="/categories" class="site-item">
       <div class="headline">分类</div>
       <div class="num">15</div>
     </router-link>
@@ -17,15 +17,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useSidebarStore } from '@store/modules/sidebar'
 
 export default defineComponent({
+  props: {
+    closeSidebar: { type: Function }
+  },
   setup() {
-    const store = useSidebarStore()
-    const hidden = () => {
-      store.updateHiddenStatus()
-    }
-    return { hidden }
+    return {}
   }
 })
 </script>

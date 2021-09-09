@@ -1,6 +1,5 @@
 <template>
   <Header />
-  <Sidebar />
   <Main />
   <Footer />
 </template>
@@ -10,12 +9,10 @@ import { defineComponent } from 'vue'
 import { Header } from '@/layouts/Header'
 import { Main } from '@/layouts/Main'
 import { Footer } from '@/layouts/Footer'
-import { Sidebar } from '@layouts/Sidebar'
 
 export default defineComponent({
   components: {
     Header,
-    Sidebar,
     Main,
     Footer
   },

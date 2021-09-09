@@ -6,18 +6,20 @@
       <div class="hidden md:block">
         <Menu></Menu>
       </div>
-      <Toggle />
+      <Toggle :toggle="openSidebar" />
     </div>
   </nav>
+  <Sidebar ref="sidebar" />
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import { Icon } from '@iconify/vue'
 import Logo from './components/Logo.vue'
 import Menu from './components/Menu.vue'
 import Search from './components/Search.vue'
 import Toggle from './components/Toggle.vue'
+import { Sidebar } from '@layouts/Sidebar'
 
 export default defineComponent({
   components: {
@@ -25,10 +27,15 @@ export default defineComponent({
     Logo,
     Menu,
     Search,
-    Toggle
+    Toggle,
+    Sidebar
   },
   setup() {
-    return {}
+    const sidebar = ref<InstanceType<typeof Sidebar>>()
+    const openSidebar = () => {
+      sidebar.value?.openSidebar()
+    }
+    return { sidebar, openSidebar }
   }
 })
 </script>
