@@ -24,7 +24,7 @@
 <script lang="ts">
 import { defineComponent, ref, watch } from 'vue'
 import { Icon } from '@iconify/vue'
-import { Avatar } from '@components/Avatar'
+import Avatar from './components/Avatar.vue'
 import Menus from './components/Menus.vue'
 import SiteData from './components/SiteData.vue'
 import { Divide } from '@components/Divide'

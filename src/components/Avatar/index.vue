@@ -1,7 +1,10 @@
 <template>
-  <div class="avatar">
-    <img :style="{ width: width, height: height }" src="@assets/images/avatar.jpg" alt="" />
-  </div>
+  <img
+    class="avatar-img"
+    :style="{ width: width, height: height }"
+    src="@assets/images/avatar.jpg"
+    alt=""
+  />
 </template>
 
 <script lang="ts">
@@ -23,17 +26,13 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.avatar {
-  @apply flex items-center justify-center pl-4 pr-4 pt-4 pb-4 cursor-pointer select-none;
-}
-
-.avatar img {
+.avatar-img {
   @apply rounded-full cursor-pointer select-none;
 
   transition: all 0.5s;
 }
 
-.avatar img:hover {
+.avatar-img:hover {
   transform: rotate(360deg);
 }
 </style>

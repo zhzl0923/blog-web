@@ -37,7 +37,11 @@ export default defineComponent({
   @apply table-cell  text-sm text-gray-700 space-y-4 hover:text-blue-500 select-none;
 }
 
-.site-item .site-item div:last-child {
-  @apply text-xs text-blue-700;
+.site-item .headline {
+  @apply text-base;
+}
+
+.site-item .num {
+  @apply text-xl;
 }
 </style>
