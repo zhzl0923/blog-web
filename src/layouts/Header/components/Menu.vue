@@ -43,7 +43,7 @@ export default defineComponent({
 }
 
 .menu .menu-item {
-  @apply pl-4 pr-4 h-16 box-border font-medium hover:bg-gray-100;
+  @apply pl-4 pr-4 h-16 box-border  hover:bg-gray-100;
   @apply text-gray-700 flex items-center space-x-2 flex-shrink-0;
 
   border-bottom: 3px solid transparent;

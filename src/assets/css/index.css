@@ -8,7 +8,7 @@
 }
 
 body {
-  @apply w-screen h-screen text-base bg-gray-200 text-gray-700;
+  @apply w-screen h-screen text-base bg-gray-200 text-gray-700 font-light;
 
   font-family:
     Inter-var,
