@@ -30,11 +30,11 @@ export default defineComponent({
 
 <style lang="css" scoped>
 .site-data {
-  @apply table w-full text-center pl-4 pr-4 mt-6;
+  @apply table w-full text-center pl-4 pr-4 mt-6 select-none;
 }
 
 .site-data .site-item {
-  @apply table-cell  text-sm text-gray-700 space-y-4 hover:text-blue-500;
+  @apply table-cell  text-sm text-gray-700 space-y-4 hover:text-blue-500 select-none;
 }
 
 .site-item .site-item div:last-child {

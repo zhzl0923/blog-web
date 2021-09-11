@@ -72,7 +72,7 @@ export default defineComponent({
 }
 
 .modal .modal-mask {
-  @apply w-screen h-screen bg-black bg-opacity-60;
+  @apply w-screen h-screen bg-black bg-opacity-50;
 }
 
 .modal .modal-content {

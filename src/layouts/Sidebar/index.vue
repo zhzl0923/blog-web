@@ -22,9 +22,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, watch } from 'vue'
 import { Icon } from '@iconify/vue'
-import Avatar from './components/Avatar.vue'
+import { Avatar } from '@components/Avatar'
 import Menus from './components/Menus.vue'
 import SiteData from './components/SiteData.vue'
 import { Divide } from '@components/Divide'
@@ -52,6 +52,14 @@ export default defineComponent({
         hidden.value = true
       }, 800)
     }
+
+    window.onresize = () => {
+      const width = document.body.clientWidth
+      if (width >= 768) {
+        closeSidebar()
+      }
+    }
+
     return { isShow, hidden, openSidebar, closeSidebar }
   }
 })
@@ -63,7 +71,7 @@ export default defineComponent({
 }
 
 .sidebar .mask {
-  @apply absolute w-screen h-screen bg-black bg-opacity-60;
+  @apply absolute w-screen h-screen bg-black bg-opacity-50;
 }
 
 .sidebar .modal {
