@@ -17,16 +17,27 @@
         <div class="num">15</div>
       </router-link>
     </div>
+    <a class="follow button--animated" target="_blank" href="https://github.com/zzl0923">
+      <Icon icon="fa-brands:github" />
+      <span>Follow Me</span>
+    </a>
+    <div class="social-icons">
+      <a class="social-icon" href="zzl_0923@163.com" target="_blank" title="邮箱">
+        <Icon icon="fa-solid:envelope" />
+      </a>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { Avatar } from '@components/Avatar'
+import { Icon } from '@iconify/vue'
 
 export default defineComponent({
   components: {
-    Avatar
+    Avatar,
+    Icon
   },
   setup() {}
 })
@@ -34,7 +45,7 @@ export default defineComponent({
 <style scoped>
 .author-info {
   @apply rounded-md bg-white shadow-sm select-none flex flex-col;
-  @apply p-3 w-full  flex items-center space-y-4;
+  @apply p-5 w-full  flex items-center space-y-4;
 }
 
 .author-info .article-info {
@@ -52,5 +63,51 @@ export default defineComponent({
 
 .article-info-item .num {
   @apply text-xl;
+}
+
+.follow {
+  @apply flex w-full items-center justify-center space-x-2;
+  @apply bg-blue-500 text-white;
+
+  line-height: 2.2;
+  transition: color 1s;
+}
+
+.button--animated {
+  position: relative;
+  z-index: 1;
+  transition: color 1s;
+}
+
+.button--animated:hover::before {
+  transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
+  transform: scaleX(1);
+}
+
+.button--animated::before {
+  @apply bg-red-500;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  content: '';
+  transition: transform 0.5s ease-out;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+.author-info .social-icons {
+  @apply flex text-xl text-gray-700 font-light;
+}
+
+.author-info .social-icons .social-icon {
+  transition: all 0.2s;
+}
+
+.author-info .social-icons .social-icon:hover {
+  transform: rotate(540deg);
 }
 </style>
