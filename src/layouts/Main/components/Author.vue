@@ -1,8 +1,10 @@
 <template>
   <div class="author-info">
     <Avatar />
-    <div class="text-center text-xl">ZLi</div>
-    <div class="text-center text-sm">大道至简</div>
+    <div class="w-full">
+      <div class="author-info__name">ZLi</div>
+      <div class="author-info__desc">大道至简!</div>
+    </div>
     <div class="article-info">
       <router-link @click="closeSidebar" to="/archive" class="article-info-item">
         <div class="headline">文章</div>
@@ -46,6 +48,16 @@ export default defineComponent({
 .author-info {
   @apply rounded-md bg-white shadow-sm select-none flex flex-col;
   @apply p-5 w-full  flex items-center space-y-4;
+}
+
+.author-info .author-info__name {
+  @apply text-center  font-medium  p-2 w-full;
+
+  font-size: 1.57rem;
+}
+
+.author-info .author-info__desc {
+  @apply text-center p-1 w-full text-sm;
 }
 
 .author-info .article-info {
