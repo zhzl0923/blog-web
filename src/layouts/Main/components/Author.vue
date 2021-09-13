@@ -24,7 +24,7 @@
       <span>Follow Me</span>
     </a>
     <div class="social-icons">
-      <a class="social-icon" href="zzl_0923@163.com" target="_blank" title="邮箱">
+      <a class="social-icon" href="mailto:zzl_0923@163.com" target="_blank" title="邮箱">
         <Icon icon="fa-solid:envelope" />
       </a>
     </div>
