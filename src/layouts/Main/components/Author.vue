@@ -3,7 +3,7 @@
     <Avatar />
     <div class="w-full">
       <div class="author-info__name">ZLi</div>
-      <div class="author-info__desc">大道至简!</div>
+      <div class="author-info__desc">Fear always springs from ignorance</div>
     </div>
     <div class="article-info">
       <router-link @click="closeSidebar" to="/archive" class="article-info-item">
@@ -46,18 +46,20 @@ export default defineComponent({
 </script>
 <style scoped>
 .author-info {
-  @apply rounded-md bg-white shadow-sm select-none flex flex-col;
-  @apply p-5 w-full  flex items-center space-y-4;
+  @apply rounded-md bg-white shadow select-none flex flex-col;
+  @apply p-5 w-full  flex items-center space-y-4 hover:shadow-lg hover:-translate-y-2;
+
+  transition: all 0.3s;
 }
 
 .author-info .author-info__name {
-  @apply text-center  font-medium  p-2 w-full;
+  @apply text-center  font-medium  p-2;
 
   font-size: 1.57rem;
 }
 
 .author-info .author-info__desc {
-  @apply text-center p-1 w-full text-sm;
+  @apply text-center p-1;
 }
 
 .author-info .article-info {
