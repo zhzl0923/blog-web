@@ -1,6 +1,6 @@
 <template>
   <div class="divide">
-    <Icon icon="fa-solid:cut" class="divide-icon" />
+    <Icon icon="fa-solid:motorcycle" class="divide-icon" />
     <hr />
   </div>
 </template>
@@ -33,12 +33,12 @@ export default defineComponent({
 .divide .divide-icon {
   z-index: 1;
   position: absolute;
-  top: 11px;
+  top: 0;
   left: 14px;
   transition: all 1s ease-in-out;
 }
 
 .divide:hover .divide-icon {
-  left: calc(100% - 30px);
+  left: calc(100% - 14px - 22px);
 }
 </style>
