@@ -1,5 +1,5 @@
 <template>
-  <ul :class="{ 'ml-8': true, hidden: !isExpand }" v-if="options.length > 0">
+  <ul :class="{ 'sub-tree': true, hidden: !isExpand }" v-if="options.length > 0">
     <li v-for="option in options" :key="option.key">
       <tree-item :option="option" :expand="expand" />
       <sub-tree :options="option.children" :expand="expand" :isExpand="option.isExpand" />
@@ -35,3 +35,9 @@ export default defineComponent({
   setup() {}
 })
 </script>
+
+<style scoped>
+.sub-tree {
+  @apply ml-8;
+}
+</style>

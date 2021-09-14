@@ -1,3 +1,4 @@
 import Tree from './index.vue'
 
-export { Tree }
+export * from './components/type'
+export { Tree}

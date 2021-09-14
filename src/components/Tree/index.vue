@@ -1,5 +1,5 @@
 <template>
-  <div class="shadow w-2/5 mt-10 mb-0 ml-auto mr-auto border">
+  <div class="max-w-sm">
     <div v-for="option in data" :key="option.key">
       <tree-item :option="option" :expand="expand" />
       <sub-tree :options="option.children" :isExpand="option.isExpand" :expand="expand" />
@@ -8,64 +8,18 @@
 </template>
 
 <script lang='ts'>
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, PropType } from 'vue'
 import { Icon } from '@iconify/vue'
 import { TreeOption } from './components/type'
 import TreeItem from './components/TreeItem.vue'
 import SubTree from './components/SubTree.vue'
 
-const tree: TreeOption[] = [
-  {
-    key: '1',
-    label: 'tree-1',
-    path: '#',
-    icon: '',
-    isExpand: true,
-    children: [
-      {
-        key: '1-1',
-        label: 'tree-1-1',
-        path: '#',
-        icon: '',
-        children: [
-          {
-            key: '1-1-1',
-            label: 'tree-1-1-1',
-            path: '#',
-            icon: ''
-          },
-          {
-            key: '1-1-2',
-            label: 'tree-1-1-2',
-            path: '#',
-            icon: ''
-          },
-          {
-            key: '1-1-3',
-            label: 'tree-1-1-3',
-            path: '#',
-            icon: ''
-          }
-        ]
-      },
-      {
-        key: '1-2',
-        label: 'tree-1-2',
-        path: '#',
-        icon: ''
-      },
-      {
-        key: '1-3',
-        label: 'tree-1-3',
-        path: '#',
-        icon: ''
-      }
-    ]
-  }
-]
-
 export default defineComponent({
   props: {
+    tree: {
+      type: Array as PropType<TreeOption[]>,
+      default: []
+    },
     expandAll: {
       type: Boolean,
       default: false
@@ -76,8 +30,9 @@ export default defineComponent({
     TreeItem,
     SubTree
   },
-  setup() {
-    const data = ref<TreeOption[]>(tree)
+  setup(props) {
+    const data = ref<TreeOption[]>(props.tree)
+
     const updateTreeExpand = (key: string, tree: TreeOption[] | undefined) => {
       if (!tree) {
         return []
@@ -87,12 +42,26 @@ export default defineComponent({
           tree[index].isExpand = !tree[index].isExpand
           break
         }
-        if (tree[index].children !== undefined) {
-          tree[index].children = updateTreeExpand(key, tree[index].children)
-        }
+        tree[index].children = updateTreeExpand(key, tree[index].children)
       }
       return tree
     }
+
+    const expandAll = (tree: TreeOption[] | undefined) => {
+      if (!tree) {
+        return []
+      }
+      for (let index = 0; index < tree.length; index++) {
+        tree[index].isExpand = true
+        tree[index].children = expandAll(tree[index].children)
+      }
+      return tree
+    }
+
+    if (props.expandAll) {
+      data.value = expandAll(data.value)
+    }
+
     const expand = (key: string) => {
       data.value = updateTreeExpand(key, data.value)
     }

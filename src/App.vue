@@ -1,18 +1,13 @@
 <template>
-  <!-- <router-view></router-view> -->
-  <Tree />
+  <router-view></router-view>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-
-import { Tree } from '@components/Tree'
-
 export default defineComponent({
-  components: {
-    Tree
-  },
-  setup() {}
+  setup() {
+    return {}
+  }
 })
 </script>
 

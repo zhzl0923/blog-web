@@ -4,7 +4,7 @@
       <Icon :icon="option.icon" />
       <span> {{ option.label }} </span>
     </div>
-    <span v-if="option.children" @click="expand(option.key)">
+    <span v-if="option.children && option.children.length > 0" @click="expand(option.key)">
       <Icon :icon="option.isExpand ? 'fa-solid:chevron-down' : 'fa-solid:chevron-left'" />
     </span>
   </a>

@@ -1,4 +1,4 @@
-export interface TreeOption {
+export  interface TreeOption {
     key: string
     label: string
     path: string
