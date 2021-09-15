@@ -1,5 +1,5 @@
 <template>
-  <div class="author-info">
+  <div class="author-info card">
     <Avatar />
     <div class="w-full">
       <div class="author-info__name">ZLi</div>
@@ -46,10 +46,8 @@ export default defineComponent({
 </script>
 <style scoped>
 .author-info {
-  @apply rounded-md bg-white shadow select-none flex flex-col;
-  @apply p-5 w-full  flex items-center space-y-4 hover:shadow-lg hover:-translate-y-2;
-
-  transition: all 0.3s;
+  @apply pl-6 pr-6 pt-5 pb-5 w-full select-none;
+  @apply flex flex-col items-center space-y-4;
 }
 
 .author-info .author-info__name {
@@ -81,7 +79,7 @@ export default defineComponent({
 
 .follow {
   @apply flex w-full items-center justify-center space-x-2;
-  @apply bg-blue-500 text-white;
+  @apply bg-blue-500 text-white rounded;
 
   line-height: 2.2;
   transition: color 1s;
@@ -94,12 +92,14 @@ export default defineComponent({
 }
 
 .button--animated:hover::before {
+  @apply rounded;
+
   transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
   transform: scaleX(1);
 }
 
 .button--animated::before {
-  @apply bg-red-500;
+  @apply bg-red-500 rounded;
 
   position: absolute;
   top: 0;

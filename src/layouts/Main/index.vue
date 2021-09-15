@@ -5,6 +5,8 @@
     </div>
     <div class="aside-content">
       <Author />
+      <Category />
+      <Tag />
     </div>
   </main>
 </template>
@@ -12,10 +14,14 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Author from './components/Author.vue'
+import Category from './components/Category.vue'
+import Tag from './components/Tags.vue'
 
 export default defineComponent({
   components: {
-    Author
+    Author,
+    Category,
+    Tag
   },
   setup() {}
 })
@@ -33,6 +39,6 @@ export default defineComponent({
 }
 
 .main .aside-content {
-  @apply w-1/4;
+  @apply w-1/4 flex flex-col space-y-6;
 }
 </style>

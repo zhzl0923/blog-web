@@ -34,6 +34,6 @@ export default defineComponent({
 <style scoped>
 .tree-item {
   @apply rounded flex justify-between items-center pl-4 pr-4 pb-2 pt-2;
-  @apply hover:bg-blue-500 hover:text-white;
+  @apply hover:bg-blue-500 hover:text-white select-none;
 }
 </style>
