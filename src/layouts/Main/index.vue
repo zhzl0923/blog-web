@@ -16,6 +16,7 @@ import { defineComponent } from 'vue'
 import Author from './components/Author.vue'
 import Category from './components/Category.vue'
 import Tag from './components/Tags.vue'
+import { ElScrollbar } from 'element-plus'
 
 export default defineComponent({
   components: {
