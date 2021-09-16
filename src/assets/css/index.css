@@ -35,3 +35,7 @@ body {
 
   transition: all 0.3s;
 }
+
+.el-scrollbar__bar {
+  z-index: 20 !important;
+}

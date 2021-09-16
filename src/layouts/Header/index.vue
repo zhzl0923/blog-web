@@ -43,5 +43,6 @@ export default defineComponent({
 <style scoped>
 .header {
   @apply h-16 pl-8 pr-8 bg-white flex items-center shadow-md w-screen justify-between;
+  @apply absolute top-0 z-10;
 }
 </style>

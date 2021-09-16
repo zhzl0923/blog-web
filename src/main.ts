@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
 import App from '@/App.vue'
-import "@assets/css/index.css"
 import "animate.css"
 import 'element-plus/dist/index.css'
+import "@assets/css/index.css"
 import { setupRouter } from '@/routes'
 import { setupStore } from '@/store'
 
