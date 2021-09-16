@@ -6,15 +6,15 @@
       <div class="author-info__desc">Fear always springs from ignorance</div>
     </div>
     <div class="article-info">
-      <router-link @click="closeSidebar" to="/archive" class="article-info-item">
+      <router-link to="/archive" class="article-info-item">
         <div class="headline">文章</div>
         <div class="num">10</div>
       </router-link>
-      <router-link @click="closeSidebar" to="/tags" class="article-info-item">
+      <router-link to="/tags" class="article-info-item">
         <div class="headline">标签</div>
         <div class="num">20</div>
       </router-link>
-      <router-link @click="closeSidebar" to="/categories" class="article-info-item">
+      <router-link to="/categories" class="article-info-item">
         <div class="headline">分类</div>
         <div class="num">15</div>
       </router-link>

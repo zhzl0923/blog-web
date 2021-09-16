@@ -40,6 +40,13 @@ const category: TreeOption[] = [
     path: '',
     icon: ''
   },
+
+  {
+    key: '1',
+    label: 'PHP',
+    path: '',
+    icon: ''
+  },
   {
     key: '2',
     label: 'PHP',
@@ -58,39 +65,10 @@ const category: TreeOption[] = [
     path: '',
     icon: ''
   },
+
   {
-    key: '2',
+    key: '1',
     label: 'PHP',
-    path: '',
-    icon: ''
-  },
-  {
-    key: '3',
-    label: 'Golang',
-    path: '',
-    icon: ''
-  },
-  {
-    key: '4',
-    label: 'Vue',
-    path: '',
-    icon: ''
-  },
-  {
-    key: '2',
-    label: 'PHP',
-    path: '',
-    icon: ''
-  },
-  {
-    key: '3',
-    label: 'Golang',
-    path: '',
-    icon: ''
-  },
-  {
-    key: '4',
-    label: 'Vue',
     path: '',
     icon: ''
   },
@@ -113,20 +91,8 @@ const category: TreeOption[] = [
     icon: ''
   },
   {
-    key: '2',
+    key: '1',
     label: 'PHP',
-    path: '',
-    icon: ''
-  },
-  {
-    key: '3',
-    label: 'Golang',
-    path: '',
-    icon: ''
-  },
-  {
-    key: '4',
-    label: 'Vue',
     path: '',
     icon: ''
   },

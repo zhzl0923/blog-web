@@ -16,7 +16,6 @@ import { defineComponent } from 'vue'
 import Author from './components/Author.vue'
 import Category from './components/Category.vue'
 import Tag from './components/Tags.vue'
-import { ElScrollbar } from 'element-plus'
 
 export default defineComponent({
   components: {
@@ -32,6 +31,7 @@ export default defineComponent({
 .main {
   @apply w-full ml-auto mr-auto mt-14 mb-0 p-6 hidden lg:flex;
 
+  margin-top: 7.5rem;
   max-width: 1200px;
 }
 
